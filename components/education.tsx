@@ -13,16 +13,14 @@ export default function Education() {
     {
       degree: "MA in Project Management",
       institution: "Addis Ababa University",
-      logo: "/aau.svg?height=80&width=80",
+      logo: "/aau.svg",
       period: "2024 - 2027",
-      
     },
     {
       degree: "BSc in Civil Engineering",
       institution: "Addis Ababa Science and Technology University",
-      logo: "/aastu.svg?height=80&width=80",
+      logo: "/aastu.svg",
       period: "2016 - 2021",
-      
     },
   ]
 
@@ -45,11 +43,12 @@ export default function Education() {
                 <div className="absolute inset-0 bg-background-lightest rounded-xl border border-primary/20 transform transition-all duration-300 group-hover:scale-[1.02] group-hover:shadow-lg group-hover:shadow-primary/10"></div>
                 <div className="relative p-6 rounded-xl">
                   <div className="flex items-start">
-                    <div className="w-16 h-16 rounded-full bg-gradient-to-r from-primary/20 to-primary/10 flex items-center justify-center mr-4 border border-primary/20 shrink-0">
+                    {/* Updated logo container */}
+                    <div className="w-20 h-20 bg-gradient-to-r from-primary/20 to-primary/10 flex items-center justify-center mr-4 rounded-xl border border-primary/20 shrink-0">
                       <img
                         src={item.logo || "/placeholder.svg"}
                         alt={item.institution}
-                        className="w-10 h-10 rounded-full"
+                        className="w-16 h-16 object-contain p-2"
                       />
                     </div>
                     <div>
@@ -59,7 +58,6 @@ export default function Education() {
                       </div>
                       <h3 className="text-xl font-bold text-foreground mb-1">{item.degree}</h3>
                       <p className="text-foreground/80 mb-4">{item.institution}</p>
-                    
                     </div>
                   </div>
                 </div>
@@ -71,4 +69,3 @@ export default function Education() {
     </section>
   )
 }
-
