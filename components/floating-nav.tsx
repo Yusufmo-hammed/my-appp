@@ -1,0 +1,87 @@
+"use client"
+
+import { useState, useEffect } from "react"
+import { motion, AnimatePresence } from "framer-motion"
+import { Home, User, Briefcase, GraduationCap, Mail, Menu, X, Code, Award } from "lucide-react"
+
+export default function FloatingNav() {
+  const [isVisible, setIsVisible] = useState(false)
+  const [isOpen, setIsOpen] = useState(false)
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 300) {
+        setIsVisible(true)
+      } else {
+        setIsVisible(false)
+        setIsOpen(false)
+      }
+    }
+
+    window.addEventListener("scroll", handleScroll)
+    return () => window.removeEventListener("scroll", handleScroll)
+  }, [])
+
+  const navItems = [
+    { name: "Home", href: "#home", icon: <Home className="w-4 h-4" /> },
+    { name: "About", href: "#about", icon: <User className="w-4 h-4" /> },
+    { name: "Skills", href: "#skills", icon: <Award className="w-4 h-4" /> },
+    { name: "Software", href: "#software-expertise", icon: <Code className="w-4 h-4" /> },
+    { name: "Experience", href: "#experience", icon: <Briefcase className="w-4 h-4" /> },
+    { name: "Portfolio", href: "#portfolio", icon: <Briefcase className="w-4 h-4" /> },
+    { name: "Education", href: "#education", icon: <GraduationCap className="w-4 h-4" /> },
+    { name: "Contact", href: "#contact", icon: <Mail className="w-4 h-4" /> },
+  ]
+
+  return (
+    <AnimatePresence>
+      {isVisible && (
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          exit={{ opacity: 0, y: 20 }}
+          className="fixed bottom-6 left-1/2 transform -translate-x-1/2 z-50"
+        >
+          <div className="relative">
+            {/* Toggle button */}
+            <motion.button
+              whileTap={{ scale: 0.95 }}
+              onClick={() => setIsOpen(!isOpen)}
+              className="p-3 rounded-full bg-primary text-primary-foreground shadow-lg flex items-center justify-center"
+              aria-label="Toggle navigation menu"
+            >
+              {isOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
+            </motion.button>
+
+            {/* Navigation items */}
+            <AnimatePresence>
+              {isOpen && (
+                <motion.div
+                  initial={{ opacity: 0, scale: 0.9, y: 0 }}
+                  animate={{ opacity: 1, scale: 1, y: -10 }}
+                  exit={{ opacity: 0, scale: 0.9, y: 0 }}
+                  className="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 bg-background-lighter backdrop-blur-sm rounded-lg border border-primary/20 shadow-lg p-2 min-w-[280px]"
+                >
+                  <div className="grid grid-cols-4 gap-1">
+                    {navItems.map((item) => (
+                      <a
+                        key={item.name}
+                        href={item.href}
+                        onClick={() => setIsOpen(false)}
+                        className="flex flex-col items-center p-2 rounded-md hover:bg-primary/10 transition-colors text-foreground hover:text-primary"
+                      >
+                        {item.icon}
+                        <span className="text-xs mt-1">{item.name}</span>
+                      </a>
+                    ))}
+                  </div>
+                </motion.div>
+              )}
+            </AnimatePresence>
+          </div>
+        </motion.div>
+      )}
+    </AnimatePresence>
+  )
+}
+
