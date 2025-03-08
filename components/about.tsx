@@ -77,7 +77,7 @@ export default function About() {
                   animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
                   transition={{ duration: 0.8 }}
                 >
-                  <h4 className="text-4xl font-bold text-primary">50+</h4>
+                  <h4 className="text-4xl font-bold text-primary">100+</h4>
                   <p className="text-foreground/90 mt-2">Projects Done</p>
                 </motion.div>
 
@@ -89,7 +89,7 @@ export default function About() {
                   animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
                   transition={{ duration: 0.8 }}
                 >
-                  <h4 className="text-4xl font-bold text-primary">4+</h4>
+                  <h4 className="text-4xl font-bold text-primary">3+</h4>
                   <p className="text-foreground/90 mt-2">Years Experience</p>
                 </motion.div>
 
@@ -101,7 +101,7 @@ export default function About() {
                   animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
                   transition={{ duration: 0.8 }}
                 >
-                  <h4 className="text-4xl font-bold text-primary">35+</h4>
+                  <h4 className="text-4xl font-bold text-primary">100+</h4>
                   <p className="text-foreground/90 mt-2">Happy Clients</p>
                 </motion.div>
               </div>
