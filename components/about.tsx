@@ -8,6 +8,13 @@ export default function About() {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, amount: 0.3 });
 
+  const handleStatClick = (message) => {
+    // Wait 300ms to allow the animation to play before responding
+    setTimeout(() => {
+      alert(message);
+    }, 300);
+  };
+
   return (
     <section id="about" className="py-20 relative bg-background-lighter">
       <div className="container mx-auto px-4">
@@ -74,34 +81,40 @@ export default function About() {
 
               {/* Stats Row */}
               <div className="flex flex-wrap justify-center items-center gap-8">
-                {/* Single Stat */}
+                {/* Stat: 50+ Projects Done */}
                 <motion.div
+                  onClick={() => handleStatClick("50+ Projects Done clicked")}
+                  whileTap={{ scale: 1.1, y: -10 }}
+                  className="cursor-pointer text-center"
                   initial={{ opacity: 0, y: 50 }}
                   animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
                   transition={{ duration: 0.8 }}
-                  className="text-center"
                 >
                   <h4 className="text-4xl font-bold text-primary">50+</h4>
                   <p className="text-foreground/90 mt-2">Projects Done</p>
                 </motion.div>
 
-                {/* Single Stat */}
+                {/* Stat: 4+ Years Experience */}
                 <motion.div
+                  onClick={() => handleStatClick("4+ Years Experience clicked")}
+                  whileTap={{ scale: 1.1, y: -10 }}
+                  className="cursor-pointer text-center"
                   initial={{ opacity: 0, y: 50 }}
                   animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
                   transition={{ duration: 0.8 }}
-                  className="text-center"
                 >
                   <h4 className="text-4xl font-bold text-primary">4+</h4>
                   <p className="text-foreground/90 mt-2">Years Experience</p>
                 </motion.div>
 
-                {/* Single Stat */}
+                {/* Stat: 35+ Happy Clients */}
                 <motion.div
+                  onClick={() => handleStatClick("35+ Happy Clients clicked")}
+                  whileTap={{ scale: 1.1, y: -10 }}
+                  className="cursor-pointer text-center"
                   initial={{ opacity: 0, y: 50 }}
                   animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
                   transition={{ duration: 0.8 }}
-                  className="text-center"
                 >
                   <h4 className="text-4xl font-bold text-primary">35+</h4>
                   <p className="text-foreground/90 mt-2">Happy Clients</p>
