@@ -15,56 +15,56 @@ export default function Portfolio() {
       title: "Commercial Complex",
       category: "Property Valuation",
       description:
-        "Comprehensive valuation of a 15-story mixed-use commercial complex in the heart of Addis Ababa. The assessment included market analysis, income approach valuation, and replacement cost estimation.",
+        "Comprehensive valuation of a mixed-use commercial complex in the heart of Addis Ababa-Bole Atlas. The assessment included market analysis, income approach valuation, and replacement cost estimation.",
       image: "/Project 1.jpg?height=600&width=800",
     },
     {
-      title: "Residential Building",
-      category: "Construction Supervision",
+      title: "Office Building",
+      category: "Property Valuation",
       description:
-        "Supervised the construction of a high-end residential building, ensuring compliance with design specifications and quality standards. Managed contractor relationships and coordinated with stakeholders.",
+        "Comprehensive valuation of a office building in Addis Ababa-Bole Atlas. The assessment included market analysis, income approach valuation, and replacement cost estimation.",
       image: "/Project 2.jpg?height=600&width=800",
     },
     {
-      title: "Highway Project",
-      category: "Site Engineering",
+      title: "Residential Apartment",
+      category: "Property Valuation",
       description:
-        "Managed site engineering for a major highway project, overseeing quality control, progress monitoring, and compliance with environmental regulations. Coordinated with contractors and government agencies.",
+        "Comprehensive valuation of residential apartment building in Addis Ababa-Megenagna. The assessment included market analysis, income approach valuation, and replacement cost estimation",
       image: "/Project 3.jpg?height=600&width=800",
     },
     {
-      title: "Office Tower",
+      title: "Residential Building",
       category: "Property Valuation",
       description:
-        "Conducted valuation for a prime office tower for collateral purposes. The assessment included detailed analysis of rental income, occupancy rates, and market comparables.",
+        "Conducted valuation for a residential building for collateral purposes. The assessment included detailed analysis of rental income, cost approach, and market comparables.",
       image: "/Project 4.jpg?height=600&width=800",
     },
     {
-      title: "Retail Center",
-      category: "Construction Management",
+      title: "Office Buildings",
+      category: "Property Valuation",
       description:
-        "Managed the construction of a modern retail center, overseeing budget, schedule, and quality. Coordinated with multiple contractors and ensured compliance with building codes.",
+        "Conducted valuation for a office building for collateral purposes. The assessment included detailed analysis of rental income, cost approach, and market comparables.",
       image: "/Project 5.jpg?height=600&width=800",
     },
     {
-      title: "Residential Complex",
+      title: "Apartment Buildings",
       category: "Property Valuation",
       description:
-        "Valuation of a large residential complex for a major bank. The assessment included detailed analysis of unit values, common areas, and development potential.",
+        "Conducted valuation for a apartment building for collateral purposes. The assessment included detailed analysis of rental income, cost approach, and market comparables.",
       image: "/Project 6.jpg?height=600&width=800",
     },
     {
-      title: "Industrial Facility",
-      category: "Site Supervision",
+      title: "Commercial Complex",
+      category: "Property Valuation",
       description:
-        "Supervised the construction of an industrial facility, ensuring compliance with specifications and safety standards. Managed quality control and coordinated with stakeholders.",
+        "Conducted valuation for a commercial complex for collateral purposes. The assessment included detailed analysis of rental income, cost approach, and market comparables.",
       image: "/Project 7.jpg?height=600&width=800",
     },
     {
-      title: "Hotel Development",
+      title: "Commerical Complex",
       category: "Property Valuation",
       description:
-        "Comprehensive valuation of a luxury hotel development for project financing. The assessment included detailed analysis of projected income, market demand, and construction costs.",
+        "Conducted valuation for a commercial complex for collateral purposes. The assessment included detailed analysis of rental income, cost approach, and market comparables.",
       image: "/Project 8.jpg?height=600&width=800",
     },
   ]
@@ -166,7 +166,7 @@ export default function Portfolio() {
                     </div>
                     <div>
                       <h4 className="text-sm font-medium text-foreground/60 mb-1">Client</h4>
-                      <p className="text-foreground">Major financial institution</p>
+                      <p className="text-foreground">Real Estate Developer</p>
                     </div>
                   </div>
                 </div>
