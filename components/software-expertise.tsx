@@ -14,8 +14,8 @@ export default function SoftwareExpertise() {
       icon: "/autocad.svg?height=40&width=40",
     },
     {
-      name: "ETABS",
-      icon: "/Etabs.png?height=40&width=40",
+      name: "Photoshop",
+      icon: "/photoshop.svg?height=40&width=40",
     },
     {
       name: "ArchiCAD",
@@ -34,27 +34,13 @@ export default function SoftwareExpertise() {
       name: "Revit",
       icon: "/revit.svg?height=40&width=40",
     },
+    
     {
       name: "SketchUp",
       icon: "/sketch.svg?height=40&width=40",
     },
     // Duplicate items to create a continuous scrolling effect
-    {
-      name: "AutoCAD",
-      icon: "/autocad.svg?height=40&width=40",
-    },
-    {
-      name: "ETABS",
-      icon: "/Etabs.jpg?height=40&width=40",
-    },
-    {
-      name: "ArchiCAD",
-      icon: "/archicad.svg?height=40&width=40",
-    },
-    {
-      name: "QGIS",
-      icon: "/qgis.svg?height=40&width=40",
-    },
+   
   ]
 
   return (
