@@ -33,7 +33,7 @@ export default function Contact() {
               aria-label="Contact via WhatsApp"
             >
               <img 
-                src="/icons/whatsapp.svg" 
+                src="/WhatsApp.svg" 
                 alt="WhatsApp Icon"
                 className="w-6 h-6"
               />
@@ -41,12 +41,12 @@ export default function Contact() {
 
             {/* Telegram */}
             <a
-              href="https://t.me/your_username"
+              href="https://t.me/yesufmg"
               className="w-12 h-12 bg-background rounded-full flex items-center justify-center hover:bg-primary transition-colors border border-primary/20"
               aria-label="Contact via Telegram"
             >
               <img 
-                src="/icons/telegram.svg" 
+                src="/telegram.svg" 
                 alt="Telegram Icon"
                 className="w-6 h-6"
               />
@@ -59,7 +59,7 @@ export default function Contact() {
               aria-label="Contact via Email"
             >
               <img 
-                src="/icons/gmail.svg" 
+                src="/gmail.svg" 
                 alt="Gmail Icon"
                 className="w-6 h-6"
               />
