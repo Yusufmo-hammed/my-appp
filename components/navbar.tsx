@@ -41,7 +41,12 @@ export default function Navbar() {
           transition={{ delay: 0.2 }} 
           className="relative"
         >
-          <div className="text-xl sm:text-2xl font-bold text-primary">YM</div>
+          {/* Logo Image - Replace src with your actual file path */}
+          <img
+            src="/logo.png" // Update this path to match your logo location
+            alt="YM Logo"
+            className="h-8 w-auto sm:h-10" // Adjust height values as needed
+          />
         </motion.div>
 
         {/* Desktop Navigation */}
