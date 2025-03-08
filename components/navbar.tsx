@@ -35,7 +35,12 @@ export default function Navbar() {
       }`}
     >
       <div className="container mx-auto px-4 py-4 flex justify-between items-center">
-        <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.2 }} className="relative">
+        <motion.div 
+          initial={{ opacity: 0 }} 
+          animate={{ opacity: 1 }} 
+          transition={{ delay: 0.2 }} 
+          className="relative"
+        >
           <div className="text-xl sm:text-2xl font-bold text-primary">YM</div>
         </motion.div>
 
@@ -58,7 +63,11 @@ export default function Navbar() {
 
         {/* Mobile Menu Button */}
         <div className="md:hidden">
-          <button onClick={() => setMobileMenuOpen(!mobileMenuOpen)} className="text-foreground focus:outline-none">
+          <button 
+            onClick={() => setMobileMenuOpen(!mobileMenuOpen)} 
+            className="text-foreground focus:outline-none"
+            aria-label="Toggle navigation menu"
+          >
             {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
           </button>
         </div>
@@ -67,26 +76,38 @@ export default function Navbar() {
       {/* Mobile Menu */}
       {mobileMenuOpen && (
         <motion.div
-          initial={{ opacity: 0, height: 0 }}
-          animate={{ opacity: 1, height: "auto" }}
-          exit={{ opacity: 0, height: 0 }}
-          className="md:hidden bg-background-lighter/90 backdrop-blur-md"
+          initial={{ opacity: 0, y: -20 }}
+          animate={{ opacity: 1, y: 0 }}
+          exit={{ opacity: 0, y: -20 }}
+          className="md:hidden fixed inset-0 w-full h-screen bg-background/95 backdrop-blur-lg z-50 pt-20"
         >
-          <div className="container mx-auto px-4 py-4 flex flex-col space-y-4">
-            {navLinks.map((link) => (
-              <a
-                key={link.name}
-                href={link.href}
+          <div className="container mx-auto px-4 h-full flex flex-col">
+            <div className="flex-1 flex flex-col items-center justify-center space-y-8">
+              {navLinks.map((link) => (
+                <a
+                  key={link.name}
+                  href={link.href}
+                  onClick={() => setMobileMenuOpen(false)}
+                  className="w-full text-center py-4 text-foreground hover:text-primary transition-colors text-2xl font-medium"
+                >
+                  {link.name}
+                </a>
+              ))}
+            </div>
+            
+            {/* Close Button */}
+            <div className="pb-8 flex justify-center">
+              <button
                 onClick={() => setMobileMenuOpen(false)}
-                className="text-foreground hover:text-primary transition-colors py-2 border-b border-primary/10 text-base"
+                className="text-foreground hover:text-primary transition-colors"
+                aria-label="Close menu"
               >
-                {link.name}
-              </a>
-            ))}
+                <X size={32} />
+              </button>
+            </div>
           </div>
         </motion.div>
       )}
     </motion.nav>
   )
 }
-
