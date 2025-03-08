@@ -13,14 +13,14 @@ export default function Education() {
     {
       degree: "MA in Project Management",
       institution: "Addis Ababa University",
-      logo: "/aau.jpg?height=80&width=80",
+      logo: "/aau.svg?height=80&width=80",
       period: "2024 - 2027",
       
     },
     {
       degree: "BSc in Civil Engineering",
       institution: "Addis Ababa Science and Technology University",
-      logo: "/aastu.png?height=80&width=80",
+      logo: "/aastu.svg?height=80&width=80",
       period: "2016 - 2021",
       
     },
