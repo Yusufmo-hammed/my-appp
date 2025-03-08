@@ -31,6 +31,8 @@ export default function Contact() {
               href="https://wa.me/251913373481"
               className="p-2 hover:scale-110 transition-transform"
               aria-label="Contact via WhatsApp"
+              target="_blank"
+              rel="noopener noreferrer"
             >
               <img 
                 src="/WhatsApp.svg" 
@@ -44,6 +46,8 @@ export default function Contact() {
               href="https://t.me/yesufmg"
               className="p-2 hover:scale-110 transition-transform"
               aria-label="Contact via Telegram"
+              target="_blank"
+              rel="noopener noreferrer"
             >
               <img 
                 src="/telegram.svg" 
@@ -52,15 +56,17 @@ export default function Contact() {
               />
             </a>
 
-            {/* Gmail */}
+            {/* LinkedIn - Corrected */}
             <a
-              href="mailto:https://www.linkedin.com/in/yusufmohammednur"
+              href="https://www.linkedin.com/in/yusufmohammednur"
               className="p-2 hover:scale-110 transition-transform"
-              aria-label="Contact via Linkedin"
+              aria-label="Connect on LinkedIn"
+              target="_blank"
+              rel="noopener noreferrer"
             >
               <img 
                 src="/linkedin.svg" 
-                alt="Linkedin Icon"
+                alt="LinkedIn Icon"
                 className="w-8 h-8"
               />
             </a>
