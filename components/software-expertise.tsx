@@ -1,6 +1,6 @@
 "use client"
 
-import { useRef } from "react"
+import { useRef, useMemo } from "react"
 import { motion, useInView } from "framer-motion"
 import Reveal from "./reveal-animation"
 
@@ -11,37 +11,55 @@ export default function SoftwareExpertise() {
   const software = [
     {
       name: "AutoCAD",
-      icon: "/autocad.svg?height=40&width=40",
+      icon: "/autocad.svg",
     },
     {
       name: "Photoshop",
-      icon: "/photoshop.svg?height=40&width=40",
+      icon: "/photoshop.svg",
     },
     {
       name: "ArchiCAD",
-      icon: "/archicad.svg?height=40&width=40",
+      icon: "/archicad.svg",
     },
     {
       name: "QGIS",
-      icon: "/qgis.svg?height=40&width=40",
+      icon: "/qgis.svg",
     },
     {
       name: "Python",
-      icon: "/python.svg?height=40&width=40",
+      icon: "/python.svg",
     },
-   
     {
       name: "Revit",
-      icon: "/revit.svg?height=40&width=40",
+      icon: "/revit.svg",
     },
-    
     {
       name: "SketchUp",
-      icon: "/sketch.svg?height=40&width=40",
+      icon: "/sketch.svg",
     },
-    // Duplicate items to create a continuous scrolling effect
-   
+    // Duplicate items for seamless loop
+    ...[
+      {
+        name: "AutoCAD",
+        icon: "/autocad.svg",
+      },
+      {
+        name: "Photoshop",
+        icon: "/photoshop.svg",
+      },
+      {
+        name: "ArchiCAD",
+        icon: "/archicad.svg",
+      },
+    ]
   ]
+
+  const animationDistance = useMemo(() => {
+    const itemCount = software.length
+    const itemWidth = 192 // w-48 (12rem = 192px)
+    const gap = 24 // gap-6 (1.5rem = 24px)
+    return -(itemCount * (itemWidth + gap))
+  }, [software.length])
 
   return (
     <section id="software-expertise" className="py-20 relative bg-background-lighter">
@@ -58,29 +76,25 @@ export default function SoftwareExpertise() {
           </Reveal>
         </div>
 
-        {/* Scrolling container with proper isolation */}
         <div
           ref={ref}
           className="relative py-8 z-20 overflow-hidden"
           style={{
-            isolation: "isolate", // Creates a new stacking context
             maskImage: "linear-gradient(to right, transparent, black 5%, black 95%, transparent)",
             WebkitMaskImage: "linear-gradient(to right, transparent, black 5%, black 95%, transparent)",
           }}
         >
-          {/* Horizontal scrolling container */}
           <div className="flex overflow-hidden">
-            {/* First scrolling row */}
             <motion.div
               className="flex gap-6 min-w-max"
               animate={{
-                x: [0, -1920],
+                x: [0, animationDistance],
               }}
               transition={{
                 x: {
                   repeat: Number.POSITIVE_INFINITY,
                   repeatType: "loop",
-                  duration: 30,
+                  duration: 40,
                   ease: "linear",
                 },
               }}
@@ -88,38 +102,20 @@ export default function SoftwareExpertise() {
               {software.map((item, index) => (
                 <div
                   key={`${item.name}-${index}`}
-                  className="w-48 h-48 flex flex-col items-center justify-center bg-background rounded-xl border border-primary/20 p-6 hover:shadow-lg hover:shadow-primary/10 transition-all duration-300 card-hover"
+                  className="w-48 h-48 flex flex-col items-center justify-center bg-background rounded-xl border border-primary/20 p-4 hover:shadow-lg hover:shadow-primary/10 transition-all duration-300 card-hover"
                 >
-                  <div className="w-16 h-16 rounded-full bg-gradient-to-r from-primary/20 to-primary/10 flex items-center justify-center mb-4 border border-primary/20">
-                    <img src={item.icon || "/placeholder.svg"} alt={item.name} className="w-10 h-10" />
-                  </div>
-                  <h3 className="text-lg font-semibold text-foreground text-center">{item.name}</h3>
-                </div>
-              ))}
-            </motion.div>
-
-            {/* Duplicate for seamless scrolling */}
-            <motion.div
-              className="flex gap-6 min-w-max absolute left-full top-8"
-              animate={{
-                x: [0, -1920],
-              }}
-              transition={{
-                x: {
-                  repeat: Number.POSITIVE_INFINITY,
-                  repeatType: "loop",
-                  duration: 30,
-                  ease: "linear",
-                },
-              }}
-            >
-              {software.map((item, index) => (
-                <div
-                  key={`${item.name}-duplicate-${index}`}
-                  className="w-48 h-48 flex flex-col items-center justify-center bg-background rounded-xl border border-primary/20 p-6 hover:shadow-lg hover:shadow-primary/10 transition-all duration-300 card-hover"
-                >
-                  <div className="w-16 h-16 rounded-full bg-gradient-to-r from-primary/20 to-primary/10 flex items-center justify-center mb-4 border border-primary/20">
-                    <img src={item.icon || "/placeholder.svg"} alt={item.name} className="w-10 h-10" />
+                  <div className="mb-4 w-full h-32 flex items-center justify-center p-2">
+                    <img 
+                      src={item.icon} 
+                      alt={item.name} 
+                      className="max-w-[80%] max-h-[80%] object-contain"
+                      style={{ 
+                        width: 'auto',
+                        height: 'auto',
+                        minWidth: '80px',
+                        minHeight: '80px'
+                      }}
+                    />
                   </div>
                   <h3 className="text-lg font-semibold text-foreground text-center">{item.name}</h3>
                 </div>
@@ -128,7 +124,6 @@ export default function SoftwareExpertise() {
           </div>
         </div>
 
-        {/* Gradient overlays to create fade effect at the edges */}
         <div
           className="absolute left-0 top-0 bottom-0 w-[100px] bg-gradient-to-r from-background-lighter to-transparent pointer-events-none z-30"
           style={{ marginTop: "12rem" }}
@@ -155,4 +150,3 @@ export default function SoftwareExpertise() {
     </section>
   )
 }
-
