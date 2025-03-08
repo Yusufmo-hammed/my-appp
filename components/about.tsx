@@ -67,11 +67,6 @@ export default function About() {
           {/* Stats Section */}
           <Reveal delay={0.3}>
             <div className="mt-12 text-center">
-              <h3 className="font-bold text-xl mb-6 text-primary">My Skill Set</h3>
-              <p className="max-w-xl mx-auto mb-8 text-foreground/80">
-                Equipped with the knowledge to turn challenges into innovations
-              </p>
-
               {/* Stats Row */}
               <div className="flex flex-wrap justify-center items-center gap-8">
                 {/* Stat: 50+ Projects Done */}
