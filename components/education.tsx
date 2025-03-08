@@ -20,7 +20,7 @@ export default function Education() {
     {
       degree: "BSc in Civil Engineering",
       institution: "Addis Ababa Science and Technology University",
-      logo: "/aastu.svg?height=80&width=80",
+      logo: "/aastu.jpg?height=80&width=80",
       period: "2016 - 2021",
       
     },
