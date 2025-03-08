@@ -23,45 +23,45 @@ export default function Contact() {
           </p>
         </Reveal>
 
-        {/* Social Icons with SVG Images */}
+        {/* Social Icons - Clean Version */}
         <Reveal delay={0.2}>
-          <div className="flex justify-center space-x-4 mb-8">
+          <div className="flex justify-center space-x-6 mb-8">
             {/* WhatsApp */}
             <a
               href="https://wa.me/251913373481"
-              className="w-12 h-12 bg-background rounded-full flex items-center justify-center hover:bg-primary transition-colors border border-primary/20"
+              className="p-2 hover:scale-110 transition-transform"
               aria-label="Contact via WhatsApp"
             >
               <img 
                 src="/WhatsApp.svg" 
                 alt="WhatsApp Icon"
-                className="w-6 h-6"
+                className="w-8 h-8"
               />
             </a>
 
             {/* Telegram */}
             <a
               href="https://t.me/yesufmg"
-              className="w-12 h-12 bg-background rounded-full flex items-center justify-center hover:bg-primary transition-colors border border-primary/20"
+              className="p-2 hover:scale-110 transition-transform"
               aria-label="Contact via Telegram"
             >
               <img 
                 src="/telegram.svg" 
                 alt="Telegram Icon"
-                className="w-6 h-6"
+                className="w-8 h-8"
               />
             </a>
 
             {/* Gmail */}
             <a
               href="mailto:yesufmt@gmail.com"
-              className="w-12 h-12 bg-background rounded-full flex items-center justify-center hover:bg-primary transition-colors border border-primary/20"
+              className="p-2 hover:scale-110 transition-transform"
               aria-label="Contact via Email"
             >
               <img 
                 src="/gmail.svg" 
                 alt="Gmail Icon"
-                className="w-6 h-6"
+                className="w-8 h-8"
               />
             </a>
           </div>
