@@ -58,7 +58,7 @@ export default function Experience() {
             <div className="h-1 bg-primary mx-auto rounded-full w-24"></div>
           </Reveal>
           <Reveal delay={0.2}>
-            <p className="mt-4 text-accent">My Services</p>
+            {/* <p className="mt-4 text-accent">My Services</p>*/}
           </Reveal>
         </div>
 
