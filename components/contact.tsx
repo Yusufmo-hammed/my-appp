@@ -2,7 +2,7 @@
 
 import { useRef } from "react";
 import { useInView } from "framer-motion";
-import Reveal from "./reveal-animation"; // Adjust the import path if needed
+import Reveal from "./reveal-animation";
 
 export default function Contact() {
   const ref = useRef(null);
@@ -10,10 +10,7 @@ export default function Contact() {
 
   return (
     <section id="contact" className="py-20 bg-background-lighter">
-      <div
-        ref={ref}
-        className="container mx-auto px-4 text-center"
-      >
+      <div ref={ref} className="container mx-auto px-4 text-center">
         {/* Heading */}
         <Reveal>
           <h2 className="font-bold mb-2 text-primary text-2xl">
@@ -26,37 +23,51 @@ export default function Contact() {
           </p>
         </Reveal>
 
-        {/* Center Icons (placeholders W, T, G) */}
+        {/* Social Icons with SVG Images */}
         <Reveal delay={0.2}>
           <div className="flex justify-center space-x-4 mb-8">
-            {/* Example: WhatsApp */}
+            {/* WhatsApp */}
             <a
               href="https://wa.me/251913373481"
-              className="w-12 h-12 bg-background rounded-full flex items-center justify-center
-                         hover:bg-primary transition-colors border border-primary/20"
+              className="w-12 h-12 bg-background rounded-full flex items-center justify-center hover:bg-primary transition-colors border border-primary/20"
+              aria-label="Contact via WhatsApp"
             >
-              <span className="text-primary font-bold">W</span>
+              <img 
+                src="/icons/whatsapp.svg" 
+                alt="WhatsApp Icon"
+                className="w-6 h-6"
+              />
             </a>
-            {/* Example: Telegram */}
+
+            {/* Telegram */}
             <a
-              href="https://t.me/..."
-              className="w-12 h-12 bg-background rounded-full flex items-center justify-center
-                         hover:bg-primary transition-colors border border-primary/20"
+              href="https://t.me/your_username"
+              className="w-12 h-12 bg-background rounded-full flex items-center justify-center hover:bg-primary transition-colors border border-primary/20"
+              aria-label="Contact via Telegram"
             >
-              <span className="text-primary font-bold">T</span>
+              <img 
+                src="/icons/telegram.svg" 
+                alt="Telegram Icon"
+                className="w-6 h-6"
+              />
             </a>
-            {/* Example: Gmail */}
+
+            {/* Gmail */}
             <a
               href="mailto:yesufmt@gmail.com"
-              className="w-12 h-12 bg-background rounded-full flex items-center justify-center
-                         hover:bg-primary transition-colors border border-primary/20"
+              className="w-12 h-12 bg-background rounded-full flex items-center justify-center hover:bg-primary transition-colors border border-primary/20"
+              aria-label="Contact via Email"
             >
-              <span className="text-primary font-bold">G</span>
+              <img 
+                src="/icons/gmail.svg" 
+                alt="Gmail Icon"
+                className="w-6 h-6"
+              />
             </a>
           </div>
         </Reveal>
 
-        {/* Contact Info in three columns */}
+        {/* Contact Info */}
         <Reveal delay={0.3}>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
             <div>
@@ -77,7 +88,7 @@ export default function Contact() {
         {/* Footer */}
         <Reveal delay={0.4}>
           <p className="text-sm text-foreground/60">
-            © {new Date().getFullYear()} All rights reserved | Yusuf Mohammed Nur
+            © {new Date().getFullYear()} All rights reserved | Yusuf Mohammednur
           </p>
         </Reveal>
       </div>
