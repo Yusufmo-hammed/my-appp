@@ -8,13 +8,6 @@ export default function About() {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, amount: 0.3 });
 
-  const handleStatClick = (message) => {
-    // Wait 300ms to allow the animation to play before responding
-    setTimeout(() => {
-      alert(message);
-    }, 300);
-  };
-
   return (
     <section id="about" className="py-20 relative bg-background-lighter">
       <div className="container mx-auto px-4">
@@ -83,8 +76,7 @@ export default function About() {
               <div className="flex flex-wrap justify-center items-center gap-8">
                 {/* Stat: 50+ Projects Done */}
                 <motion.div
-                  onClick={() => handleStatClick("50+ Projects Done clicked")}
-                  whileTap={{ scale: 1.1, y: -10 }}
+                  whileHover={{ scale: 1.1, y: -10 }}
                   className="cursor-pointer text-center"
                   initial={{ opacity: 0, y: 50 }}
                   animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
@@ -96,8 +88,7 @@ export default function About() {
 
                 {/* Stat: 4+ Years Experience */}
                 <motion.div
-                  onClick={() => handleStatClick("4+ Years Experience clicked")}
-                  whileTap={{ scale: 1.1, y: -10 }}
+                  whileHover={{ scale: 1.1, y: -10 }}
                   className="cursor-pointer text-center"
                   initial={{ opacity: 0, y: 50 }}
                   animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
@@ -109,8 +100,7 @@ export default function About() {
 
                 {/* Stat: 35+ Happy Clients */}
                 <motion.div
-                  onClick={() => handleStatClick("35+ Happy Clients clicked")}
-                  whileTap={{ scale: 1.1, y: -10 }}
+                  whileHover={{ scale: 1.1, y: -10 }}
                   className="cursor-pointer text-center"
                   initial={{ opacity: 0, y: 50 }}
                   animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
