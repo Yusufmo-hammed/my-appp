@@ -65,7 +65,7 @@ export default function Contact() {
               rel="noopener noreferrer"
             >
               <img 
-                src="/linkedin.svg" 
+                src="/linkedin1.svg" 
                 alt="LinkedIn Icon"
                 className="w-8 h-8"
               />
