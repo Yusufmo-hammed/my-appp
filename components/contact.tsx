@@ -54,13 +54,13 @@ export default function Contact() {
 
             {/* Gmail */}
             <a
-              href="mailto:yesufmt@gmail.com"
+              href="mailto:https://www.linkedin.com/in/yusufmohammednur"
               className="p-2 hover:scale-110 transition-transform"
-              aria-label="Contact via Email"
+              aria-label="Contact via Linkedin"
             >
               <img 
-                src="/gmail.svg" 
-                alt="Gmail Icon"
+                src="/linkedin.svg" 
+                alt="Linkedin Icon"
                 className="w-8 h-8"
               />
             </a>
