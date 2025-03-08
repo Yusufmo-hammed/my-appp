@@ -26,7 +26,7 @@ export default function Experience() {
       title: "Civil Engineer",
       company: "Commercial Bank of Ethiopia",
       location: "Addis Ababa, Ethiopia",
-      period: "Feb 2023 - Nov 2023",
+      period: "Aug 2022 - Nov 2023",
       description: [
         "Managed building maintenance projects across multiple bank facilities",
         "Supervised contractor compliance with specifications and payment schedules",
@@ -39,7 +39,7 @@ export default function Experience() {
       title: "Research Engineer-Highway ",
       company: "Ethiopian Roads Administration",
       location: "Addis Ababa, Ethiopia",
-      period: "Jun 2021 - Jan 2023",
+      period: "Jan 2022 - Aug 2022",
       description: [
         "Conducted applied research on highway materials to enhance sustainability and durability",
         "Designed and executed laboratory experiments to evaluate material behavior under extreme weather and traffic conditions.",
