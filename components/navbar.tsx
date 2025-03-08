@@ -73,30 +73,17 @@ export default function Navbar() {
         </div>
       </div>
 
-      {/* Mobile Menu */}
+      {/* Mobile Menu - Fixed Positioning */}
       {mobileMenuOpen && (
         <motion.div
-          initial={{ opacity: 0, y: -20 }}
-          animate={{ opacity: 1, y: 0 }}
-          exit={{ opacity: 0, y: -20 }}
-          className="md:hidden fixed inset-0 w-full h-screen bg-background/95 backdrop-blur-lg z-50 pt-20"
+          initial={{ opacity: 0, x: 100 }}
+          animate={{ opacity: 1, x: 0 }}
+          exit={{ opacity: 0, x: 100 }}
+          className="md:hidden fixed inset-0 w-full h-screen bg-background/95 backdrop-blur-lg z-50"
         >
           <div className="container mx-auto px-4 h-full flex flex-col">
-            <div className="flex-1 flex flex-col items-center justify-center space-y-8">
-              {navLinks.map((link) => (
-                <a
-                  key={link.name}
-                  href={link.href}
-                  onClick={() => setMobileMenuOpen(false)}
-                  className="w-full text-center py-4 text-foreground hover:text-primary transition-colors text-2xl font-medium"
-                >
-                  {link.name}
-                </a>
-              ))}
-            </div>
-            
             {/* Close Button */}
-            <div className="pb-8 flex justify-center">
+            <div className="flex justify-end pt-6 pb-4">
               <button
                 onClick={() => setMobileMenuOpen(false)}
                 className="text-foreground hover:text-primary transition-colors"
@@ -104,6 +91,22 @@ export default function Navbar() {
               >
                 <X size={32} />
               </button>
+            </div>
+
+            {/* Scrollable Menu Items */}
+            <div className="flex-1 overflow-y-auto pb-8">
+              <div className="flex flex-col items-center space-y-6">
+                {navLinks.map((link) => (
+                  <a
+                    key={link.name}
+                    href={link.href}
+                    onClick={() => setMobileMenuOpen(false)}
+                    className="w-full text-center py-3 text-foreground hover:text-primary transition-colors text-xl font-medium"
+                  >
+                    {link.name}
+                  </a>
+                ))}
+              </div>
             </div>
           </div>
         </motion.div>
