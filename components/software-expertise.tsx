@@ -11,7 +11,7 @@ export default function SoftwareExpertise() {
   const software = [
     {
       name: "AutoCAD",
-      icon: "/autocad.jpg?height=40&width=40",
+      icon: "/autocad.svg?height=40&width=40",
     },
     {
       name: "ETABS",
@@ -19,29 +19,29 @@ export default function SoftwareExpertise() {
     },
     {
       name: "ArchiCAD",
-      icon: "/archicad.jpg?height=40&width=40",
+      icon: "/archicad.svg?height=40&width=40",
     },
     {
       name: "QGIS",
-      icon: "/qgis.png?height=40&width=40",
+      icon: "/qgis.svg?height=40&width=40",
     },
     {
       name: "Python",
-      icon: "/python.jpg?height=40&width=40",
+      icon: "/python.svg?height=40&width=40",
     },
    
     {
       name: "Revit",
-      icon: "/revit.jpg?height=40&width=40",
+      icon: "/revit.svg?height=40&width=40",
     },
     {
       name: "SketchUp",
-      icon: "/sketch.jpg?height=40&width=40",
+      icon: "/sketch.svg?height=40&width=40",
     },
     // Duplicate items to create a continuous scrolling effect
     {
       name: "AutoCAD",
-      icon: "/autocad.jpg?height=40&width=40",
+      icon: "/autocad.svg?height=40&width=40",
     },
     {
       name: "ETABS",
@@ -49,11 +49,11 @@ export default function SoftwareExpertise() {
     },
     {
       name: "ArchiCAD",
-      icon: "/archicad.jpg?height=40&width=40",
+      icon: "/archicad.svg?height=40&width=40",
     },
     {
       name: "QGIS",
-      icon: "/qgis.png?height=40&width=40",
+      icon: "/qgis.svg?height=40&width=40",
     },
   ]
 
