@@ -43,7 +43,7 @@ export default function Navbar() {
         >
           {/* Logo Image - Replace src with your actual file path */}
           <img
-            src="/logo3.svg" // Update this path to match your logo location
+            src="/logo4.png" // Update this path to match your logo location
             alt="YM Logo"
             className="h-8 w-auto sm:h-10" // Adjust height values as needed
           />
