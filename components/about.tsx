@@ -17,7 +17,7 @@ export default function About() {
           ref={ref}
           initial={{ opacity: 0 }}
           animate={isInView ? { opacity: 1 } : { opacity: 0 }}
-          transition={{ duration: 0.8, ease: "easeOut" }}
+          transition={{ duration: 0.8 }}
           className="max-w-4xl mx-auto"
         >
           <div className="text-center mb-12">
@@ -50,14 +50,12 @@ export default function About() {
             <div className="mt-12 text-center">
               <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
                 {[
-                  { value: 100, label: "Projects Done" },
-                  { value: 3, label: "Years Experience" },
-                  { value: 100, label: "Happy Clients" }
+                  { value: 100, label: "Projects Done", duration: 2 },
+                  { value: 3, label: "Years Experience", duration: 1.5 },
+                  { value: 100, label: "Happy Clients", duration: 2.2 }
                 ].map((stat, index) => (
                   <motion.div
                     key={stat.label}
-                    whileHover={{ scale: 1.05 }}
-                    className="cursor-pointer p-6 rounded-xl bg-background-lightest hover:bg-background-light transition-all"
                     initial={{ opacity: 0, y: 30 }}
                     animate={isInView ? { opacity: 1, y: 0 } : {}}
                     transition={{ 
@@ -65,13 +63,14 @@ export default function About() {
                       delay: 1.2 + index * 0.2,
                       ease: "backOut"
                     }}
+                    className="p-6 bg-background-lightest rounded-lg hover:bg-background-light transition-colors"
                   >
                     <h4 className="text-4xl font-bold text-primary mb-2">
                       <AnimatedNumber 
                         value={stat.value} 
                         suffix="+" 
                         isInView={isInView}
-                        duration={1.5}
+                        duration={stat.duration}
                         ease="circOut"
                       />
                     </h4>
