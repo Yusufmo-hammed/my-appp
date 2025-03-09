@@ -85,6 +85,7 @@ html {
   scroll-behavior: smooth;
 }
 
+/* --- ANIMATIONS --- */
 @keyframes blink {
   0%,
   100% {
@@ -213,4 +214,3 @@ section {
 .reveal-animation.revealed {
   @apply opacity-100 translate-y-0;
 }
-
