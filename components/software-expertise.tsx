@@ -51,6 +51,18 @@ export default function SoftwareExpertise() {
         name: "ArchiCAD",
         icon: "/archicad.svg",
       },
+      {
+      name: "QGIS",
+      icon: "/qgis.svg",
+    },
+    {
+      name: "Python",
+      icon: "/python.svg",
+    },
+    {
+      name: "Revit",
+      icon: "/revit.svg",
+    },
     ]
   ]
 
