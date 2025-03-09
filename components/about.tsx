@@ -1,17 +1,18 @@
+// components/About.tsx
 "use client";
 
 import { useRef } from "react";
 import { motion, useInView } from "framer-motion";
-import Reveal from "./reveal-animation"; // Update the import path if needed
+import Reveal from "./RevealAnimation";
+import AnimatedNumber from "./AnimatedNumber";
 
 export default function About() {
-  const ref = useRef(null);
+  const ref = useRef<HTMLDivElement>(null);
   const isInView = useInView(ref, { once: true, amount: 0.3 });
 
   return (
     <section id="about" className="py-20 relative bg-background-lighter">
       <div className="container mx-auto px-4">
-        {/* Main container with fade-in effect */}
         <motion.div
           ref={ref}
           initial={{ opacity: 0 }}
@@ -19,7 +20,6 @@ export default function About() {
           transition={{ duration: 0.5 }}
           className="max-w-4xl mx-auto"
         >
-          {/* Section Title */}
           <div className="text-center mb-12">
             <Reveal>
               <h2 className="font-bold mb-4 text-primary">About Me</h2>
@@ -29,7 +29,6 @@ export default function About() {
             </Reveal>
           </div>
 
-          {/* Card with your main text paragraphs */}
           <Reveal delay={0.2}>
             <div className="relative p-8 rounded-2xl overflow-hidden card-hover">
               <div className="absolute inset-0 bg-background-lightest rounded-2xl border border-primary/20"></div>
@@ -64,12 +63,9 @@ export default function About() {
             </div>
           </Reveal>
 
-          {/* Stats Section */}
           <Reveal delay={0.3}>
             <div className="mt-12 text-center">
-              {/* Stats Row */}
               <div className="flex flex-wrap justify-center items-center gap-8">
-                {/* Stat: 50+ Projects Done */}
                 <motion.div
                   whileHover={{ scale: 1.1, y: -10 }}
                   className="cursor-pointer text-center"
@@ -77,11 +73,12 @@ export default function About() {
                   animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
                   transition={{ duration: 0.8 }}
                 >
-                  <h4 className="text-4xl font-bold text-primary">100+</h4>
+                  <h4 className="text-4xl font-bold text-primary">
+                    <AnimatedNumber value={100} suffix="+" isInView={isInView} />
+                  </h4>
                   <p className="text-foreground/90 mt-2">Projects Done</p>
                 </motion.div>
 
-                {/* Stat: 4+ Years Experience */}
                 <motion.div
                   whileHover={{ scale: 1.1, y: -10 }}
                   className="cursor-pointer text-center"
@@ -89,11 +86,12 @@ export default function About() {
                   animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
                   transition={{ duration: 0.8 }}
                 >
-                  <h4 className="text-4xl font-bold text-primary">3+</h4>
+                  <h4 className="text-4xl font-bold text-primary">
+                    <AnimatedNumber value={3} suffix="+" isInView={isInView} />
+                  </h4>
                   <p className="text-foreground/90 mt-2">Years Experience</p>
                 </motion.div>
 
-                {/* Stat: 35+ Happy Clients */}
                 <motion.div
                   whileHover={{ scale: 1.1, y: -10 }}
                   className="cursor-pointer text-center"
@@ -101,7 +99,9 @@ export default function About() {
                   animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
                   transition={{ duration: 0.8 }}
                 >
-                  <h4 className="text-4xl font-bold text-primary">100+</h4>
+                  <h4 className="text-4xl font-bold text-primary">
+                    <AnimatedNumber value={100} suffix="+" isInView={isInView} />
+                  </h4>
                   <p className="text-foreground/90 mt-2">Happy Clients</p>
                 </motion.div>
               </div>
