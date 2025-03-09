@@ -60,9 +60,9 @@ export default function FloatingNav() {
                   initial={{ opacity: 0, scale: 0.9, y: 0 }}
                   animate={{ opacity: 1, scale: 1, y: -10 }}
                   exit={{ opacity: 0, scale: 0.9, y: 0 }}
-                  className="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-3 bg-background-lighter backdrop-blur-md rounded-lg border border-primary/20 shadow-lg p-3 w-[90vw] max-w-[600px]"
+                  className="fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-background-lighter backdrop-blur-md rounded-lg border border-primary/20 shadow-lg p-3 w-[90vw] max-w-[600px]"
                 >
-                  <div className="flex flex-row overflow-x-auto gap-3 scrollbar-hide">
+                  <div className="flex flex-row overflow-x-auto gap-3 scrollbar-hide justify-start">
                     {navItems.map((item) => (
                       <a
                         key={item.name}
