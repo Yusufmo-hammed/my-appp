@@ -81,12 +81,12 @@ export default function Navbar() {
       {/* Mobile Menu - Fixed Positioning */}
       {mobileMenuOpen && (
         <motion.div
-          initial={{ opacity: 0, x: 100 }}
+          initial={{ opacity: 0, x: "100%" }}
           animate={{ opacity: 1, x: 0 }}
-          exit={{ opacity: 0, x: 100 }}
+          exit={{ opacity: 0, x: "100%" }}
           className="md:hidden fixed inset-0 w-full h-screen bg-background/95 backdrop-blur-lg z-50"
         >
-          <div className="container mx-auto px-4 h-full flex flex-col">
+          <div className="w-full px-4 h-full flex flex-col">
             {/* Close Button */}
             <div className="flex justify-end pt-6 pb-4">
               <button
