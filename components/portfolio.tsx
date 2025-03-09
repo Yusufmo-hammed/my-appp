@@ -74,7 +74,7 @@ export default function Portfolio() {
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
           <Reveal>
-            <h2 className="font-bold mb-4 text-primary">Project Portfolio</h2>
+            <h2 className="font-bold mb-4 text-primary">Recent Projects</h2>
           </Reveal>
           <Reveal delay={0.1}>
             <div className="h-1 bg-primary mx-auto rounded-full w-24"></div>
