@@ -1,7 +1,7 @@
 "use client"
 
 import { useState, useEffect } from "react"
-import { motion } from "framer-motion"
+import { motion, AnimatePresence } from "framer-motion"
 import { Menu, X } from "lucide-react"
 
 export default function Navbar() {
@@ -35,17 +35,17 @@ export default function Navbar() {
       }`}
     >
       <div className="container mx-auto px-4 py-4 flex justify-between items-center">
-        <motion.div 
-          initial={{ opacity: 0 }} 
-          animate={{ opacity: 1 }} 
-          transition={{ delay: 0.2 }} 
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 0.2 }}
           className="relative"
         >
           {/* Logo Image - Replace src with your actual file path */}
           <img
-            src="/logo4.png" // Update this path to match your logo location
+            src="/logo4.png"
             alt="YM Logo"
-            className="h-8 w-auto sm:h-10" // Adjust height values as needed
+            className="h-8 w-auto sm:h-10"
           />
         </motion.div>
 
@@ -68,39 +68,42 @@ export default function Navbar() {
 
         {/* Mobile Menu Button */}
         <div className="md:hidden">
-          <button 
-            onClick={() => setMobileMenuOpen(!mobileMenuOpen)} 
+          <button
+            onClick={() => setMobileMenuOpen(true)}
             className="text-foreground focus:outline-none"
             aria-label="Toggle navigation menu"
           >
-            {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
+            <Menu size={24} />
           </button>
         </div>
       </div>
 
-      {/* Mobile Menu - Fixed Positioning */}
-      {mobileMenuOpen && (
-        <motion.div
-          initial={{ opacity: 0, x: "100%" }}
-          animate={{ opacity: 1, x: 0 }}
-          exit={{ opacity: 0, x: "100%" }}
-          className="md:hidden fixed inset-0 w-full h-screen bg-background/95 backdrop-blur-lg z-50"
-        >
-          <div className="w-full px-4 h-full flex flex-col">
-            {/* Close Button */}
-            <div className="flex justify-end pt-6 pb-4">
-              <button
-                onClick={() => setMobileMenuOpen(false)}
-                className="text-foreground hover:text-primary transition-colors"
-                aria-label="Close menu"
-              >
-                <X size={32} />
-              </button>
-            </div>
-
-            {/* Scrollable Menu Items */}
-            <div className="flex-1 overflow-y-auto pb-8">
-              <div className="flex flex-col items-center space-y-6">
+      {/* Mobile Menu Modal */}
+      <AnimatePresence>
+        {mobileMenuOpen && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            className="md:hidden fixed inset-0 flex items-center justify-center z-50 bg-black bg-opacity-50"
+          >
+            <motion.div
+              initial={{ scale: 0.8, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              exit={{ scale: 0.8, opacity: 0 }}
+              transition={{ duration: 0.3 }}
+              className="bg-background/95 backdrop-blur-lg w-11/12 max-w-sm p-6 rounded-lg"
+            >
+              <div className="flex justify-end">
+                <button
+                  onClick={() => setMobileMenuOpen(false)}
+                  className="text-foreground hover:text-primary transition-colors"
+                  aria-label="Close menu"
+                >
+                  <X size={32} />
+                </button>
+              </div>
+              <div className="flex flex-col items-center space-y-6 mt-4">
                 {navLinks.map((link) => (
                   <a
                     key={link.name}
@@ -112,10 +115,10 @@ export default function Navbar() {
                   </a>
                 ))}
               </div>
-            </div>
-          </div>
-        </motion.div>
-      )}
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </motion.nav>
   )
 }
