@@ -85,6 +85,15 @@ html {
   scroll-behavior: smooth;
 }
 
+/* Scrollbar utilities */
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
 /* --- ANIMATIONS --- */
 @keyframes blink {
   0%,
