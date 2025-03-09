@@ -42,8 +42,8 @@ export default function FloatingNav() {
           exit={{ opacity: 0, y: 20 }}
           className="fixed bottom-6 left-1/2 transform -translate-x-1/2 z-50"
         >
-          <div className="relative">
-            {/* Toggle button */}
+          <div className="relative flex flex-col items-center">
+            {/* Toggle Button */}
             <motion.button
               whileTap={{ scale: 0.95 }}
               onClick={() => setIsOpen(!isOpen)}
@@ -53,16 +53,16 @@ export default function FloatingNav() {
               {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
             </motion.button>
 
-            {/* Navigation items */}
+            {/* Horizontal Menu */}
             <AnimatePresence>
               {isOpen && (
                 <motion.div
                   initial={{ opacity: 0, scale: 0.9, y: 0 }}
                   animate={{ opacity: 1, scale: 1, y: -10 }}
                   exit={{ opacity: 0, scale: 0.9, y: 0 }}
-                  className="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-3 bg-background-lighter backdrop-blur-md rounded-lg border border-primary/20 shadow-lg p-3 w-[90vw] max-w-[350px]"
+                  className="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-3 bg-background-lighter backdrop-blur-md rounded-lg border border-primary/20 shadow-lg p-3 w-auto max-w-full px-4"
                 >
-                  <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
+                  <div className="flex flex-wrap justify-center gap-3">
                     {navItems.map((item) => (
                       <a
                         key={item.name}
