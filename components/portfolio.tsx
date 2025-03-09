@@ -81,7 +81,10 @@ export default function Portfolio() {
           </Reveal>
         </div>
 
-        <div ref={ref} className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+        <div
+          ref={ref}
+          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6"
+        >
           {projects.map((project, index) => (
             <Reveal key={index} delay={0.05 * index}>
               <motion.div
@@ -107,7 +110,9 @@ export default function Portfolio() {
                     {project.title}
                   </h3>
                   <div className="h-0 overflow-hidden transition-all duration-300 group-hover:h-auto group-hover:mt-2">
-                    <p className="text-sm text-foreground/80 line-clamp-2">{project.description}</p>
+                    <p className="text-sm text-foreground/80 line-clamp-2">
+                      {project.description}
+                    </p>
                   </div>
                 </div>
               </motion.div>
@@ -126,22 +131,22 @@ export default function Portfolio() {
             className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-background/80 backdrop-blur-md"
             onClick={() => setSelectedProject(null)}
           >
+            {/* Fixed close button always visible */}
+            <button
+              className="fixed top-4 right-4 z-50 p-2 rounded-full bg-background-lightest/50 text-foreground hover:bg-background-lightest/70 transition-colors"
+              onClick={() => setSelectedProject(null)}
+            >
+              <X className="w-5 h-5" />
+            </button>
             <motion.div
               initial={{ scale: 0.9, opacity: 0 }}
               animate={{ scale: 1, opacity: 1 }}
               exit={{ scale: 0.9, opacity: 0 }}
-              className="relative bg-gradient-to-br from-background to-background-lighter rounded-xl border border-primary/20 w-full max-w-4xl overflow-hidden shadow-xl"
+              className="relative bg-gradient-to-br from-background to-background-lighter rounded-xl border border-primary/20 w-full max-w-4xl max-h-screen overflow-y-auto shadow-xl"
               onClick={(e) => e.stopPropagation()}
             >
-              <button
-                className="absolute top-4 right-4 z-10 p-2 rounded-full bg-background-lightest/50 text-foreground hover:bg-background-lightest/70 transition-colors"
-                onClick={() => setSelectedProject(null)}
-              >
-                <X className="w-5 h-5" />
-              </button>
-
               <div className="grid md:grid-cols-2">
-                <div className="h-64 md:h-auto">
+                <div className="h-auto">
                   <img
                     src={projects[selectedProject].image || "/placeholder.svg"}
                     alt={projects[selectedProject].title}
@@ -152,20 +157,34 @@ export default function Portfolio() {
                   <span className="inline-block px-3 py-1 rounded-full bg-gradient-to-r from-primary/20 to-primary/10 text-primary text-xs font-medium border border-primary/20 mb-4">
                     {projects[selectedProject].category}
                   </span>
-                  <h3 className="text-2xl font-bold text-foreground mb-4">{projects[selectedProject].title}</h3>
-                  <p className="text-foreground/80 mb-6">{projects[selectedProject].description}</p>
+                  <h3 className="text-2xl font-bold text-foreground mb-4">
+                    {projects[selectedProject].title}
+                  </h3>
+                  <p className="text-foreground/80 mb-6">
+                    {projects[selectedProject].description}
+                  </p>
 
                   <div className="space-y-4">
                     <div>
-                      <h4 className="text-sm font-medium text-foreground/60 mb-1">Project Scope</h4>
-                      <p className="text-foreground">Comprehensive assessment and detailed analysis</p>
+                      <h4 className="text-sm font-medium text-foreground/60 mb-1">
+                        Project Scope
+                      </h4>
+                      <p className="text-foreground">
+                        Comprehensive assessment and detailed analysis
+                      </p>
                     </div>
                     <div>
-                      <h4 className="text-sm font-medium text-foreground/60 mb-1">Methodologies Used</h4>
-                      <p className="text-foreground">Market comparison, income approach, cost approach</p>
+                      <h4 className="text-sm font-medium text-foreground/60 mb-1">
+                        Methodologies Used
+                      </h4>
+                      <p className="text-foreground">
+                        Market comparison, income approach, cost approach
+                      </p>
                     </div>
                     <div>
-                      <h4 className="text-sm font-medium text-foreground/60 mb-1">Client</h4>
+                      <h4 className="text-sm font-medium text-foreground/60 mb-1">
+                        Client
+                      </h4>
                       <p className="text-foreground">Real Estate Developer</p>
                     </div>
                   </div>
@@ -178,4 +197,3 @@ export default function Portfolio() {
     </section>
   )
 }
-
