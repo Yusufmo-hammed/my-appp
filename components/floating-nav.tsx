@@ -23,14 +23,14 @@ export default function FloatingNav() {
   }, [])
 
   const navItems = [
-    { name: "Home", href: "#home", icon: <Home className="w-4 h-4" /> },
-    { name: "About", href: "#about", icon: <User className="w-4 h-4" /> },
-    { name: "Skills", href: "#skills", icon: <Award className="w-4 h-4" /> },
-    { name: "Software", href: "#software-expertise", icon: <Code className="w-4 h-4" /> },
-    { name: "Experience", href: "#experience", icon: <Briefcase className="w-4 h-4" /> },
-    { name: "Portfolio", href: "#portfolio", icon: <Briefcase className="w-4 h-4" /> },
-    { name: "Education", href: "#education", icon: <GraduationCap className="w-4 h-4" /> },
-    { name: "Contact", href: "#contact", icon: <Mail className="w-4 h-4" /> },
+    { name: "Home", href: "#home", icon: <Home className="w-5 h-5" /> },
+    { name: "About", href: "#about", icon: <User className="w-5 h-5" /> },
+    { name: "Skills", href: "#skills", icon: <Award className="w-5 h-5" /> },
+    { name: "Software", href: "#software-expertise", icon: <Code className="w-5 h-5" /> },
+    { name: "Experience", href: "#experience", icon: <Briefcase className="w-5 h-5" /> },
+    { name: "Portfolio", href: "#portfolio", icon: <Briefcase className="w-5 h-5" /> },
+    { name: "Education", href: "#education", icon: <GraduationCap className="w-5 h-5" /> },
+    { name: "Contact", href: "#contact", icon: <Mail className="w-5 h-5" /> },
   ]
 
   return (
@@ -50,7 +50,7 @@ export default function FloatingNav() {
               className="p-3 rounded-full bg-primary text-primary-foreground shadow-lg flex items-center justify-center"
               aria-label="Toggle navigation menu"
             >
-              {isOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
+              {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
             </motion.button>
 
             {/* Navigation items */}
@@ -60,9 +60,9 @@ export default function FloatingNav() {
                   initial={{ opacity: 0, scale: 0.9, y: 0 }}
                   animate={{ opacity: 1, scale: 1, y: -10 }}
                   exit={{ opacity: 0, scale: 0.9, y: 0 }}
-                  className="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 bg-background-lighter backdrop-blur-sm rounded-lg border border-primary/20 shadow-lg p-2 min-w-[280px]"
+                  className="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-3 bg-background-lighter backdrop-blur-md rounded-lg border border-primary/20 shadow-lg p-3 w-[90vw] max-w-[350px]"
                 >
-                  <div className="grid grid-cols-4 gap-1">
+                  <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
                     {navItems.map((item) => (
                       <a
                         key={item.name}
@@ -84,4 +84,3 @@ export default function FloatingNav() {
     </AnimatePresence>
   )
 }
-
