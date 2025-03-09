@@ -34,14 +34,15 @@ export default function Navbar() {
         isScrolled ? "bg-background/80 backdrop-blur-md shadow-lg" : "bg-transparent"
       }`}
     >
-      <div className="container mx-auto px-4 py-4 flex justify-between items-center">
+      {/* Top Nav Bar (Desktop + Mobile Button) */}
+      <div className="w-full px-4 py-4 flex justify-between items-center">
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 0.2 }}
           className="relative"
         >
-          {/* Logo Image - Replace src with your actual file path */}
+          {/* Logo - Update src if needed */}
           <img
             src="/logo4.png"
             alt="YM Logo"
@@ -78,21 +79,22 @@ export default function Navbar() {
         </div>
       </div>
 
-      {/* Mobile Menu Modal */}
+      {/* Mobile Menu Overlay */}
       <AnimatePresence>
         {mobileMenuOpen && (
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            className="md:hidden fixed inset-0 flex items-center justify-center z-50 bg-black bg-opacity-50"
+            className="md:hidden fixed inset-0 z-50 bg-black bg-opacity-50 flex items-center justify-center overflow-x-hidden overflow-y-auto"
           >
+            {/* Mobile Menu Modal */}
             <motion.div
               initial={{ scale: 0.8, opacity: 0 }}
               animate={{ scale: 1, opacity: 1 }}
               exit={{ scale: 0.8, opacity: 0 }}
               transition={{ duration: 0.3 }}
-              className="bg-background/95 backdrop-blur-lg w-11/12 max-w-sm p-6 rounded-lg"
+              className="bg-background/95 backdrop-blur-lg w-11/12 p-6 rounded-lg"
             >
               <div className="flex justify-end">
                 <button
