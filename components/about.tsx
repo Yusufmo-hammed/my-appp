@@ -3,7 +3,7 @@
 
 import { useRef } from "react";
 import { motion, useInView } from "framer-motion";
-import Reveal from "./RevealAnimation";
+import Reveal from "./reveal-animation";
 import AnimatedNumber from "./AnimatedNumber";
 
 export default function About() {
