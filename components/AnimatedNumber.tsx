@@ -8,16 +8,24 @@ interface AnimatedNumberProps {
   value: number;
   suffix?: string;
   isInView: boolean;
+  duration?: number;
+  ease?: string | number[];
 }
 
-export default function AnimatedNumber({ value, suffix = "", isInView }: AnimatedNumberProps) {
+export default function AnimatedNumber({ 
+  value, 
+  suffix = "", 
+  isInView,
+  duration = 2,
+  ease = "easeOut"
+}: AnimatedNumberProps) {
   const [current, setCurrent] = useState<number>(0);
 
   useEffect(() => {
     if (isInView) {
       const animation = animate(0, value, {
-        duration: 1,
-        ease: "easeOut",
+        duration,
+        ease,
         onUpdate: (latest) => {
           setCurrent(Math.floor(latest));
         },
@@ -26,7 +34,7 @@ export default function AnimatedNumber({ value, suffix = "", isInView }: Animate
     } else {
       setCurrent(0);
     }
-  }, [isInView, value]);
+  }, [isInView, value, duration, ease]);
 
   return <>{current}{suffix}</>;
 }
